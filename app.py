@@ -32,7 +32,6 @@ try:
         firebase_admin.initialize_app(cred, {
             "databaseURL": os.getenv("FIREBASE_DATABASE_URL")
         })
-    else:
 except Exception as e:
     st.error(f"Error initializing Firebase: {e}")
     st.stop()
