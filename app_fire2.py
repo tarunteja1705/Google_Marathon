@@ -10,7 +10,7 @@ import google.generativeai as genai
 # Load environment variables
 load_dotenv()
 
-st.set_page_config(page_title="Gemini Image Demo")
+st.set_page_config(page_title="Dashboard Analysis")
 
 # Firebase initialization
 try:
@@ -32,9 +32,7 @@ try:
         firebase_admin.initialize_app(cred, {
             "databaseURL": os.getenv("FIREBASE_DATABASE_URL")
         })
-        st.success("Firebase connected successfully!")
     else:
-        st.info("Firebase app already initialized.")
 except Exception as e:
     st.error(f"Error initializing Firebase: {e}")
     st.stop()
@@ -87,7 +85,6 @@ def store_response_in_firebase(identifier, response, encoding):
     try:
         response_ref = db.reference(f"/responses/{identifier}")
         response_ref.set({"response": response, "encoding": encoding})
-        st.success(f"Response successfully stored in Firebase under identifier: {identifier}")
     except Exception as e:
         st.error(f"Error storing response in Firebase: {e}")
 
@@ -102,7 +99,7 @@ def check_existing_response(image_id):
         return None
 
 # Streamlit App UI
-st.header("Gemini Application")
+st.header("Dashboard Analysis using Gemini")
 
 # Main App
 input_text = st.text_input("Input Prompt: ", key="input")
@@ -125,21 +122,13 @@ The output should be in the form of the JSON given below:
 
 Output: {
   "Charts": { },
-  "Variables": {
-    "Variable1":{
-    "Sub Variable1": "Value1",
-    "Sub Variable2": "Value2"}
-    "Variable2":{
-    "Sub Variable1": "Value1",
-    "Sub Variable2": "Value2"}
-    ...
-  },
+  "Variables": {},
   "Summary": "Summary of the input data in pointers"
 }
 
 If you are unable to extract the data, strictly give the response as Null. Do not print anything else
 In charts the key is the header of the chart and value is description of the chart
-for variables try to find out all the variables and their values
+for variables try to find out all the variables and their values with respect to the charts seperately
 
 
 """
@@ -158,10 +147,8 @@ if submit:
                 # Check if a response already exists in Firebase
                 existing_response = check_existing_response(image_id)
                 if existing_response:
-                    st.info("Response already exists. Fetching from Firebase.")
                     response = existing_response.get("response", "No response found")
                 else:
-                    st.info("No existing response found. Generating a new one.")
                     response = get_gemini_response(input_prompt, image_data, input_text)
                     if response:
                         # Store the new response in Firebase
