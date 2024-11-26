@@ -214,6 +214,6 @@ Thanks for reading this article.
 
 If you enjoyed this article, please click on the clap button 👏 and share to help others find it!
 
-Github-[Dashboard Analysis]("https://github.com/tarunteja1705/Google_Marathon")
+Github-[Dashboard Analysis](https://github.com/tarunteja1705/Google_Marathon)
 
 **Empowering Data Understanding, One Dashboard at a Time! 📊🚀**
