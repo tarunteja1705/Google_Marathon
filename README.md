@@ -178,7 +178,7 @@ def get_gemini_response(input_text, image_data, prompt):
       "Final balance": "378K"
     }
   },
-  "Summary": "The dashboard presents a cash flow analysis for the period 1/1/2021 to 12/31/2021.\n              It shows a total of 1 million entries, 633K in total outflows, and a final balance of 378K.  Profit margin was 37.4%.\n              Inflows and outflows fluctuated throughout the year.\n              Expenses are broken down by type and business division, with HR being the largest expense by division and Personnel Expenses being the largest by category.\n              The balance shows some monthly profit and losses, indicating some financial instability.\n              More detailed analysis would require access to the underlying data."
+  "Summary": "The dashboard presents a cash flow analysis for the period 1/1/2021 to 12/31/2021.It shows a total of 1 million entries, 633K in total outflows, and a final balance of 378K.  Profit margin was 37.4%.Inflows and outflows fluctuated throughout the year.Expenses are broken down by type and business division, with HR being the largest expense by division and Personnel Expenses being the largest by category.The balance shows some monthly profit and losses, indicating some financial instability.More detailed analysis would require access to the underlying data."
 }
 ```
 
@@ -213,5 +213,7 @@ Thanks for reading this article.
 **Thanks Gowrinadh for your contribution in developing the project.**
 
 If you enjoyed this article, please click on the clap button 👏 and share to help others find it!
+
+Github-[Dashboard Analysis]("https://github.com/tarunteja1705/Google_Marathon")
 
 **Empowering Data Understanding, One Dashboard at a Time! 📊🚀**
