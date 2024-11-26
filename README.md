@@ -20,6 +20,8 @@ As a data enthusiast, I've witnessed countless hours wasted manually interpretin
 
 ## Architectural Blueprint
 
+![System Architecture](Architechture.png)
+
 ### System Components
 
 #### User Interface Layer
@@ -136,6 +138,8 @@ def get_gemini_response(input_text, image_data, prompt):
 - Secure environment variable management
 
 ## Interface 
+![Interface](Interface.png)
+
 
 ## Analysis Output
 ```json
